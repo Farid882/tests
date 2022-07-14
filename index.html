@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset = "utf8" />
+        <title>Бесконечный скроллинг с JavaScript</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>Бесконечный скроллинг</h1>
+        <div id="infinite-scroll">
+            <div>
+     <script>
+       for( let i = 0; i < 100; i++ )
+         document.write("<p>Случайный текст или еще, что то</p>");
+     </script>
+           </div>
+        </div>
+        <script>
+       
+            window.addEventListener("scroll", function(){
+           
+                var block = document.getElementById('infinite-scroll');
+                var counter = 1;
+               
+                var contentHeight = block.offsetHeight;      // 1) высота блока контента вместе с границами
+                var yOffset       = window.pageYOffset;      // 2) текущее положение скролбара
+                var window_height = window.innerHeight;      // 3) высота внутренней области окна документа
+                var y             = yOffset + window_height;
+               
+                // если пользователь достиг конца
+                if(y >= contentHeight)
+                {
+                    //загружаем новое содержимое в элемент
+                    block.innerHTML = block.innerHTML + "<p>Случайный текст или еще, что то</p>";
+                    
+                }
+                
+            });
+           
+        </script>
+    </body>
+</html>

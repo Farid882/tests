@@ -1,0 +1,43 @@
+body {
+    background: black;
+    color: azure;
+    text-align: center;
+    margin-top: 159px;
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+.infinite-scroll {
+    width: 500px;
+    height: 60px;
+    background: red;
+}
+
+p {
+    background: rgb(168, 128, 18);
+    width: 600px;
+    height: 70px;
+    text-align: center;
+    justify-content: space-between;
+    margin-left: 700px;
+    border: 6px solid rgb(231, 61, 18);
+    font-size: 16px;
+    
+    transform: translateX(-150%);
+  animation: ani 1s forwards;
+}
+
+p:hover {
+    transform: translateX(-150%);
+  animation: ani 1s forwards;
+}
+
+
+@keyframes ani {
+    0% {transform: translateX(-150%);}
+    100% {transform: translateY(0);}
+}
